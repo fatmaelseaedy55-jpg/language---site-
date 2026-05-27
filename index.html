@@ -1,671 +1,671 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أكاديمية اللغات للأبطال - مغامرة التعلم الممتعة</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية اللغات للأبطال - مغامرة التعلم الممتعة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS المخصص لجعل الموقع طفولي ومبهج */
+        :root {
+            --primary-blue: #FF9F1C; /* برتقالي دافئ */
+            --sky-blue: #4EA8DE; /* أزرق سماوي */
+            --sunny-yellow: #FFD166; /* أصفر مشمس */
+            --bright-green: #06D6A0; /* أخضر مبهج */
+            --candy-pink: #EF476F; /* وردي حلوى */
+            --dark-text: #073B4C; /* كحلي دافئ للنصوص */
+            --pure-white: #FFFFFF;
+        }
 
-<style>
-/* CSS المخصص لجعل الموقع طفولي ومبهج */
-:root {
---primary-blue: #FF9F1C; /* برتقالي دافئ */
---sky-blue: #4EA8DE; /* أزرق سماوي */
---sunny-yellow: #FFD166; /* أصفر مشمس */
---bright-green: #06D6A0; /* أخضر مبهج */
---candy-pink: #EF476F; /* وردي حلوى */
---dark-text: #073B4C; /* كحلي دافئ للنصوص */
---pure-white: #FFFFFF;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Fredoka One', sans-serif;
+        }
 
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Cairo', 'Fredoka One', sans-serif;
-}
+        body {
+            background-color: #F8F9FA;
+            color: var(--dark-text);
+            font-size: 18px;
+            overflow-x: hidden;
+        }
 
-body {
-background-color: #F8F9FA;
-color: var(--dark-text);
-font-size: 18px;
-overflow-x: hidden;
-}
+        /* الهيدر والقائمة */
+        header {
+            background-color: var(--sky-blue);
+            padding: 15px 30px;
+            border-bottom: 5px solid var(--sunny-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-/* الهيدر والقائمة */
-header {
-background-color: var(--sky-blue);
-padding: 15px 30px;
-border-bottom: 5px solid var(--sunny-yellow);
-position: sticky;
-top: 0;
-z-index: 1000;
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.nav-container {
-max-width: 1200px;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--pure-white);
+            text-shadow: 3px 3px 0px var(--candy-pink);
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-.logo {
-font-size: 28px;
-font-weight: 900;
-color: var(--pure-white);
-text-shadow: 3px 3px 0px var(--candy-pink);
-text-decoration: none;
-cursor: pointer;
-}
+        .score-badge {
+            background-color: var(--candy-pink);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            border: 3px solid var(--pure-white);
+            box-shadow: 0 4px 0px rgba(0,0,0,0.1);
+        }
 
-.score-badge {
-background-color: var(--candy-pink);
-color: white;
-padding: 8px 20px;
-border-radius: 50px;
-font-weight: bold;
-font-size: 20px;
-border: 3px solid var(--pure-white);
-box-shadow: 0 4px 0px rgba(0,0,0,0.1);
-}
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
 
-.nav-links {
-display: flex;
-gap: 15px;
-list-style: none;
-}
+        .nav-links button {
+            background: var(--pure-white);
+            border: 3px solid var(--dark-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: var(--dark-text);
+            cursor: pointer;
+            box-shadow: 0 4px 0px var(--dark-text);
+            transition: all 0.2s ease;
+        }
 
-.nav-links button {
-background: var(--pure-white);
-border: 3px solid var(--dark-text);
-padding: 8px 15px;
-border-radius: 20px;
-font-weight: bold;
-color: var(--dark-text);
-cursor: pointer;
-box-shadow: 0 4px 0px var(--dark-text);
-transition: all 0.2s ease;
-}
+        .nav-links button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0px var(--dark-text);
+        }
 
-.nav-links button:active {
-transform: translateY(4px);
-box-shadow: 0 0px 0px var(--dark-text);
-}
+        /* حاوية الصفحات */
+        .page {
+            display: none;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            animation: popIn 0.4s ease-out;
+        }
 
-/* حاوية الصفحات */
-.page {
-display: none;
-max-width: 1100px;
-margin: 30px auto;
-padding: 20px;
-animation: popIn 0.4s ease-out;
-}
+        .page.active {
+            display: block;
+        }
 
-.page.active {
-display: block;
-}
+        @keyframes popIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-@keyframes popIn {
-0% { transform: scale(0.95); opacity: 0; }
-100% { transform: scale(1); opacity: 1; }
-}
+        /* الصفحة الرئيسية */
+        .hero {
+            background: linear-gradient(135deg, var(--sky-blue), #56CFE1);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            border: 5px solid var(--sunny-yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-/* الصفحة الرئيسية */
-.hero {
-background: linear-gradient(135deg, var(--sky-blue), #56CFE1);
-border-radius: 30px;
-padding: 40px;
-text-align: center;
-color: white;
-border: 5px solid var(--sunny-yellow);
-box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-margin-bottom: 40px;
-position: relative;
-}
+        .mascot-container {
+            font-size: 80px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite alternate;
+        }
 
-.mascot-container {
-font-size: 80px;
-margin-bottom: 10px;
-animation: bounce 2s infinite alternate;
-}
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
 
-@keyframes bounce {
-0% { transform: translateY(0); }
-100% { transform: translateY(-15px); }
-}
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px var(--dark-text);
+        }
 
-.hero h1 {
-font-size: 40px;
-margin-bottom: 15px;
-text-shadow: 2px 2px 0px var(--dark-text);
-}
+        .hero p {
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-.hero p {
-font-size: 22px;
-font-weight: bold;
-}
+        /* أزرار اللغات الضخمة والمناسبة للموبايل */
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
 
-/* أزرار اللغات الضخمة والمناسبة للموبايل */
-.language-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-gap: 25px;
-margin-bottom: 50px;
-}
+        .lang-btn {
+            padding: 30px 20px;
+            font-size: 26px;
+            font-weight: 900;
+            color: white;
+            border-radius: 25px;
+            border: 4px solid var(--dark-text);
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 8px 0px var(--dark-text);
+            transition: all 0.2s ease;
+        }
 
-.lang-btn {
-padding: 30px 20px;
-font-size: 26px;
-font-weight: 900;
-color: white;
-border-radius: 25px;
-border: 4px solid var(--dark-text);
-cursor: pointer;
-text-align: center;
-box-shadow: 0 8px 0px var(--dark-text);
-transition: all 0.2s ease;
-}
+        .lang-btn:active {
+            transform: translateY(8px);
+            box-shadow: 0 0px 0px var(--dark-text);
+        }
 
-.lang-btn:active {
-transform: translateY(8px);
-box-shadow: 0 0px 0px var(--dark-text);
-}
+        .btn-en { background-color: var(--sky-blue); }
+        .btn-de { background-color: var(--primary-blue); }
+        .btn-it { background-color: var(--bright-green); }
+        .btn-ar { background-color: var(--candy-pink); }
 
-.btn-en { background-color: var(--sky-blue); }
-.btn-de { background-color: var(--primary-blue); }
-.btn-it { background-color: var(--bright-green); }
-.btn-ar { background-color: var(--candy-pink); }
+        /* قسم الميزات */
+        .features-section {
+            background: var(--pure-white);
+            border-radius: 25px;
+            padding: 30px;
+            border: 4px dashed var(--sky-blue);
+            text-align: center;
+        }
 
-/* قسم الميزات */
-.features-section {
-background: var(--pure-white);
-border-radius: 25px;
-padding: 30px;
-border: 4px dashed var(--sky-blue);
-text-align: center;
-}
+        .features-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--candy-pink);
+        }
 
-.features-section h2 {
-font-size: 32px;
-margin-bottom: 30px;
-color: var(--candy-pink);
-}
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-.features-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
-}
+        .feature-card {
+            padding: 20px;
+            background: #FFFBF0;
+            border-radius: 20px;
+            border: 3px solid var(--sunny-yellow);
+        }
 
-.feature-card {
-padding: 20px;
-background: #FFFBF0;
-border-radius: 20px;
-border: 3px solid var(--sunny-yellow);
-}
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
 
-.feature-icon {
-font-size: 50px;
-margin-bottom: 10px;
-}
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
 
-.feature-card h3 {
-font-size: 22px;
-margin-bottom: 10px;
-}
+        /* لوحة التحكم داخل صفحة اللغة */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+        }
 
-/* لوحة التحكم داخل صفحة اللغة */
-.dashboard-layout {
-display: grid;
-grid-template-columns: 280px 1fr;
-gap: 30px;
-}
+        @media (max-width: 768px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; } /* تبسيط للموبايل */
+        }
 
-@media (max-width: 768px) {
-.dashboard-layout {
-grid-template-columns: 1fr;
-}
-.nav-links { display: none; } /* تبسيط للموبايل */
-}
+        .sidebar-menu {
+            background: var(--pure-white);
+            border: 4px solid var(--dark-text);
+            border-radius: 25px;
+            padding: 20px;
+            height: fit-content;
+            box-shadow: 0 6px 0px var(--dark-text);
+        }
 
-.sidebar-menu {
-background: var(--pure-white);
-border: 4px solid var(--dark-text);
-border-radius: 25px;
-padding: 20px;
-height: fit-content;
-box-shadow: 0 6px 0px var(--dark-text);
-}
+        .sidebar-menu h3 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+            border-bottom: 3px dashed var(--sunny-yellow);
+            padding-bottom: 10px;
+        }
 
-.sidebar-menu h3 {
-margin-bottom: 15px;
-text-align: center;
-font-size: 22px;
-border-bottom: 3px dashed var(--sunny-yellow);
-padding-bottom: 10px;
-}
+        .level-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #F1F5F9;
+            border: 2px solid var(--dark-text);
+            border-radius: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.2s;
+        }
 
-.level-btn {
-width: 100%;
-padding: 12px;
-font-size: 18px;
-font-weight: bold;
-background: #F1F5F9;
-border: 2px solid var(--dark-text);
-border-radius: 15px;
-margin-bottom: 10px;
-cursor: pointer;
-text-align: right;
-transition: all 0.2s;
-}
+        .level-btn.active, .level-btn:hover {
+            background: var(--sunny-yellow);
+            transform: translateX(-5px);
+        }
 
-.level-btn.active, .level-btn:hover {
-background: var(--sunny-yellow);
-transform: translateX(-5px);
-}
+        .content-workspace {
+            background: var(--pure-white);
+            border: 4px solid var(--dark-text);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 6px 0px var(--dark-text);
+        }
 
-.content-workspace {
-background: var(--pure-white);
-border: 4px solid var(--dark-text);
-border-radius: 25px;
-padding: 30px;
-box-shadow: 0 6px 0px var(--dark-text);
-}
+        /* صندوق الدروس والمحتوى التعليمي */
+        .lesson-card {
+            background: #FFF;
+            border: 3px solid #E2E8F0;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-/* صندوق الدروس والمحتوى التعليمي */
-.lesson-card {
-background: #FFF;
-border: 3px solid #E2E8F0;
-border-radius: 20px;
-padding: 25px;
-margin-bottom: 30px;
-position: relative;
-}
+        .lesson-card h4 {
+            color: var(--sky-blue);
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.lesson-card h4 {
-color: var(--sky-blue);
-font-size: 24px;
-margin-bottom: 15px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
+        .image-prompt-box {
+            background-color: #E8F5E9;
+            border: 2px dashed var(--bright-green);
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 15px;
+            margin: 15px 0;
+            color: #2E7D32;
+        }
 
-.image-prompt-box {
-background-color: #E8F5E9;
-border: 2px dashed var(--bright-green);
-padding: 12px;
-border-radius: 12px;
-font-size: 15px;
-margin: 15px 0;
-color: #2E7D32;
-}
+        .script-box {
+            background-color: #FFF3E0;
+            border-left: 5px solid var(--primary-blue);
+            border-right: 5px solid var(--primary-blue);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            font-size: 16px;
+        }
 
-.script-box {
-background-color: #FFF3E0;
-border-left: 5px solid var(--primary-blue);
-border-right: 5px solid var(--primary-blue);
-padding: 15px;
-border-radius: 12px;
-margin: 15px 0;
-font-size: 16px;
-}
+        /* نظام الكويزات والألعاب */
+        .quiz-box {
+            background: #F0FDF4;
+            border: 3px solid var(--bright-green);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
 
-/* نظام الكويزات والألعاب */
-.quiz-box {
-background: #F0FDF4;
-border: 3px solid var(--bright-green);
-border-radius: 20px;
-padding: 20px;
-margin-top: 20px;
-}
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border: 2px solid var(--dark-text);
+            border-radius: 15px;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: right;
+            cursor: pointer;
+            box-shadow: 0 4px 0px var(--dark-text);
+            transition: all 0.1s;
+        }
 
-.option-btn {
-display: block;
-width: 100%;
-padding: 15px;
-background: white;
-border: 2px solid var(--dark-text);
-border-radius: 15px;
-margin-top: 10px;
-font-size: 18px;
-text-align: right;
-cursor: pointer;
-box-shadow: 0 4px 0px var(--dark-text);
-transition: all 0.1s;
-}
+        .option-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0px var(--dark-text);
+        }
 
-.option-btn:active {
-transform: translateY(4px);
-box-shadow: 0 0px 0px var(--dark-text);
-}
+        .feedback-msg {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
 
-.feedback-msg {
-margin-top: 15px;
-font-weight: bold;
-font-size: 20px;
-text-align: center;
-}
-
-.timer-banner {
-background: var(--candy-pink);
-color: white;
-padding: 10px 20px;
-border-radius: 15px;
-font-weight: bold;
-font-size: 22px;
-text-align: center;
-margin-bottom: 20px;
-border: 3px solid var(--dark-text);
-}
-</style>
+        .timer-banner {
+            background: var(--candy-pink);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 3px solid var(--dark-text);
+        }
+    </style>
 </head>
 <body>
 
-<header>
-<div class="nav-container">
-<a class="logo" onclick="showPage('home')">🚀 أكاديمية الأبطال</a>
-<div class="score-badge">⭐ النجوم: <span id="star-count">0</span></div>
-<ul class="nav-links">
-<li><button onclick="showPage('home')">الرئيسية</button></li>
-<li><button onclick="showPage('exams')">مركز الامتحانات</button></li>
-<li><button onclick="showPage('games')">الألعاب والكويزات</button></li>
-</ul>
-</div>
-</header>
+    <header>
+        <div class="nav-container">
+            <a class="logo" onclick="showPage('home')">🚀 أكاديمية الأبطال</a>
+            <div class="score-badge">⭐ النجوم: <span id="star-count">0</span></div>
+            <ul class="nav-links">
+                <li><button onclick="showPage('home')">الرئيسية</button></li>
+                <li><button onclick="showPage('exams')">مركز الامتحانات</button></li>
+                <li><button onclick="showPage('games')">الألعاب والكويزات</button></li>
+            </ul>
+        </div>
+    </header>
 
-<main>
-<section id="page-home" class="page active">
-<div class="hero">
-<div class="mascot-container">🦁</div>
-<h1>مرحباً بك في عالم اللغات السحري!</h1>
-<p>Welcome to the Magic World of Languages! اختر لغتك المفضلة وابدأ مغامرتك الآن!</p>
-</div>
+    <main>
+        <section id="page-home" class="page active">
+            <div class="hero">
+                <div class="mascot-container">🦁</div>
+                <h1>مرحباً بك في عالم اللغات السحري!</h1>
+                <p>Welcome to the Magic World of Languages! اختر لغتك المفضلة وابدأ مغامرتك الآن!</p>
+            </div>
 
-<div class="language-grid">
-<button class="lang-btn btn-en" onclick="startLanguage('english')">🇬🇧 تعلم الإنجليزي</button>
-<button class="lang-btn btn-de" onclick="startLanguage('german')">🇩🇪 تعلم الألماني</button>
-<button class="lang-btn btn-it" onclick="startLanguage('italian')">🇮🇹 تعلم الإيطالي</button>
-<button class="lang-btn btn-ar" onclick="startLanguage('arabic')">🇪🇬 تعلم العربي</button>
-</div>
+            <div class="language-grid">
+                <button class="lang-btn btn-en" onclick="startLanguage('english')">🇬🇧 تعلم الإنجليزي</button>
+                <button class="lang-btn btn-de" onclick="startLanguage('german')">🇩🇪 تعلم الألماني</button>
+                <button class="lang-btn btn-it" onclick="startLanguage('italian')">🇮🇹 تعلم الإيطالي</button>
+                <button class="lang-btn btn-ar" onclick="startLanguage('arabic')">🇪🇬 تعلم العربي</button>
+            </div>
 
-<div class="features-section">
-<h2>ليه تتعلم معانا؟ 🤔</h2>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">🎮</div>
-<h3>تفاعلي بالكامل</h3>
-<p>ألعاب وكويزات ممتعة تجمع بها النجوم في كل خطوة!</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🤩</div>
-<h3>ممتع وسهل</h3>
-<p>شرح بسيط جداً مع صور كرتونية وفيديوهات مخصصة لك.</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🎁</div>
-<h3>مجاني للتجربة</h3>
-<p>ابدأ فوراً وبدون أي شروط، كل المستويات مفتوحة لك.</p>
-</div>
-</div>
-</div>
-</section>
+            <div class="features-section">
+                <h2>ليه تتعلم معانا؟ 🤔</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>تفاعلي بالكامل</h3>
+                        <p>ألعاب وكويزات ممتعة تجمع بها النجوم في كل خطوة!</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤩</div>
+                        <h3>ممتع وسهل</h3>
+                        <p>شرح بسيط جداً مع صور كرتونية وفيديوهات مخصصة لك.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>مجاني للتجربة</h3>
+                        <p>ابدأ فوراً وبدون أي شروط، كل المستويات مفتوحة لك.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="page-language" class="page">
-<div class="dashboard-layout">
-<div class="sidebar-menu">
-<h3 id="current-lang-title">لغة العمالقة</h3>
-<button class="level-btn active" onclick="loadLevelContent('A1')">🥇 مبتدئ A1</button>
-<button class="level-btn" onclick="loadLevelContent('A2')">🥈 ابتدائي A2</button>
-<button class="level-btn" onclick="loadLevelContent('B1')">🥉 متوسط B1</button>
-<button class="level-btn" onclick="loadLevelContent('B2')">🚀 فوق المتوسط B2</button>
-<button class="level-btn" onclick="loadLevelContent('C1')">🏆 متقدم C1</button>
-</div>
-<div class="content-workspace" id="level-workspace">
-</div>
-</div>
-</section>
+        <section id="page-language" class="page">
+            <div class="dashboard-layout">
+                <div class="sidebar-menu">
+                    <h3 id="current-lang-title">لغة العمالقة</h3>
+                    <button class="level-btn active" onclick="loadLevelContent('A1')">🥇 مبتدئ A1</button>
+                    <button class="level-btn" onclick="loadLevelContent('A2')">🥈 ابتدائي A2</button>
+                    <button class="level-btn" onclick="loadLevelContent('B1')">🥉 متوسط B1</button>
+                    <button class="level-btn" onclick="loadLevelContent('B2')">🚀 فوق المتوسط B2</button>
+                    <button class="level-btn" onclick="loadLevelContent('C1')">🏆 متقدم C1</button>
+                </div>
+                <div class="content-workspace" id="level-workspace">
+                    </div>
+            </div>
+        </section>
 
-<section id="page-exams" class="page">
-<div class="hero" style="background: var(--candy-pink);">
-<div class="mascot-container">⏱️</div>
-<h1>مركز الامتحانات الكبرى للأبطال</h1>
-<p>اختبر قوتك الحقيقية في اللغات واكسب 50 نجمة دفعة واحدة!</p>
-</div>
-<div class="content-workspace">
-<div class="timer-banner" id="exam-timer">المؤقت جاهز: 15:00 دقيقة</div>
-<div id="exam-quiz-container">
-<h3>انقر على الزر بالأسفل لبدء تشغيل الامتحان وتنشيط المؤقت الفوري</h3>
-<br>
-<button class="option-btn" style="text-align:center; background: var(--sunny-yellow);" onclick="startExamSimulator()">🎯 ابدأ الامتحان الشامل الآن</button>
-</div>
-</div>
-</section>
+        <section id="page-exams" class="page">
+            <div class="hero" style="background: var(--candy-pink);">
+                <div class="mascot-container">⏱️</div>
+                <h1>مركز الامتحانات الكبرى للأبطال</h1>
+                <p>اختبر قوتك الحقيقية في اللغات واكسب 50 نجمة دفعة واحدة!</p>
+            </div>
+            <div class="content-workspace">
+                <div class="timer-banner" id="exam-timer">المؤقت جاهز: 15:00 دقيقة</div>
+                <div id="exam-quiz-container">
+                    <h3>انقر على الزر بالأسفل لبدء تشغيل الامتحان وتنشيط المؤقت الفوري</h3>
+                    <br>
+                    <button class="option-btn" style="text-align:center; background: var(--sunny-yellow);" onclick="startExamSimulator()">🎯 ابدأ الامتحان الشامل الآن</button>
+                </div>
+            </div>
+        </section>
 
-<section id="page-games" class="page">
-<div class="hero" style="background: var(--bright-green);">
-<div class="mascot-container">👾</div>
-<h1>مملكة الألعاب السريعة</h1>
-<p>طابق الكلمات بالصور واكسب نقاطاً سريعة وممتعة!</p>
-</div>
-<div class="content-workspace" style="text-align: center;">
-<h2>لعبة مطابقة الكلمات السريعة ⚡</h2>
-<br>
-<p style="font-size: 22px; font-weight: bold; margin-bottom: 20px;">ما معنى كلمة "Apple" باللغة العربية؟</p>
-<button class="option-btn" style="text-align: center;" onclick="triggerGameAnswer(true)">🍎 تفاحة</button>
-<button class="option-btn" style="text-align: center;" onclick="triggerGameAnswer(false)">🍌 موزة</button>
-<div id="game-feedback" class="feedback-msg"></div>
-</div>
-</section>
-</main>
+        <section id="page-games" class="page">
+            <div class="hero" style="background: var(--bright-green);">
+                <div class="mascot-container">👾</div>
+                <h1>مملكة الألعاب السريعة</h1>
+                <p>طابق الكلمات بالصور واكسب نقاطاً سريعة وممتعة!</p>
+            </div>
+            <div class="content-workspace" style="text-align: center;">
+                <h2>لعبة مطابقة الكلمات السريعة ⚡</h2>
+                <br>
+                <p style="font-size: 22px; font-weight: bold; margin-bottom: 20px;">ما معنى كلمة "Apple" باللغة العربية؟</p>
+                <button class="option-btn" style="text-align: center;" onclick="triggerGameAnswer(true)">🍎 تفاحة</button>
+                <button class="option-btn" style="text-align: center;" onclick="triggerGameAnswer(false)">🍌 موزة</button>
+                <div id="game-feedback" class="feedback-msg"></div>
+            </div>
+        </section>
+    </main>
 
-<script>
-let currentLang = 'english';
-let currentLevel = 'A1';
-let totalStars = 0;
-let examTimerInterval = null;
+    <script>
+        let currentLang = 'english';
+        let currentLevel = 'A1';
+        let totalStars = 0;
+        let examTimerInterval = null;
 
-// قاعدة بيانات الدروس والبرومبتات والكويزات التعليمية لكل اللغات الـ 4
-const coursesData = {
-english: {
-title: "اللغة الإنجليزية للأبطال 🇬🇧",
-A1: {
-lessons: [
-{ id: 1, title: "الدرس 1: التحيات والترحيب (Greetings)", content: "للبدء في التحدث، نقولHello وتعني (مرحباً)، وعند الصباح نقول Good morning وتعني (صباح الخير). عندما نلتقي بصديق نقول: Hello, how are you? فيجيب: I am fine, thank you! (أنا بخير، شكراً لك).", prompt: "A super cute cartoon lion wearing a school backpack, waving its hand smiling happily, bright sunny school yard background, colorful vector illustration, 3D Pixar style.", script: "أهلاً بكم يا أبطال في درس الإنجليزية الأول! اليوم سنتعلم كيف نحيي أصدقائنا الجدد. عندما تقابل شخصاً جديداً، ابتسم وقل له بكل ثقة: Hello! هيا كرروا معي.. ممتازين!", pdf_idea: "ورقة تلوين الحروف والكلمات Hello و Good morning وتوصيل النقاط لتشكيل وجه مبتسم." },
-{ id: 2, title: "الدرس 2: الألوان الزاهية (Colors)", content: "الألوان تجعل عالمنا جميلاً! الأحمر هو Red مثل التفاحة الجميلة، الأزرق هو Blue مثل السماء الصافية، والأصفر هو Yellow مثل الشمس المشرقة. الأخضر هو Green مثل أوراق الشجر.", prompt: "A whimsical cute cartoon chameleon changing its colors into blocks of shiny red, blue, yellow, and green, clean white background, kid-friendly design, 8k Resolution.", script: "مرحباً بكم يا أصدقائي! هل تحبون الرسم؟ اليوم سنتعلم أسماء الألوان بالإنجليزية لتلوين لوحاتكم. الأحمر هو Red والأزرق هو Blue.. ما هو لونكم المفضل؟", pdf_idea: "رسمة قوس قزح غير ملون، ومكتوب على كل شريط اسم اللون بالإنجليزية، يقوم الطفل بتلوينه." }
-],
-quiz: [
-{ q: "ما معنى كلمة 'Red'؟", o: ["أزرق", "أحمر", "أخضر"], a: 1, e: "برافو! Red يعني اللون الأحمر مثل الفراولة اللذيذة." },
-{ q: "عندما نلتقي بشخص في الصباح نقول:", o: ["Good night", "Good morning", "Goodbye"], a: 1, e: "ممتاز! Good morning هي تحية الصباح الجميلة." }
-]
-}
-},
-german: {
-title: "اللغة الألمانية للأبطال 🇩🇪",
-A1: {
-lessons: [
-{ id: 1, title: "الدرس 1: التحيات والتعارف (Begrüßung)", content: "في ألمانيا، عندما نحيي شخصاً نقولHallo وتعني (مرحباً). وفي الصباح نقول Guten Morgen وتعني (صباح الخير). وعندما نسأل صديقاً عن اسمه نقول: Wie heißt du? (ما اسمك؟) فيجيب: Ich heiße Ahmed (اسمي أحمد).", prompt: "A cheerful cute cartoon bear wearing traditional German lederhosen, holding a small welcome banner, friendly village background, colorful animation style.", script: "مرحباً بكم في رحلتنا إلى ألمانيا! لغتنا اليوم رائعة جداً وسهلة. لتقول مرحباً لصديقك الجديد قل له: Hallo! هيا جربوها.. برافو! أنتم مذهلون حقاً.", pdf_idea: "كتابة جملة Ich heiße وترك فراغ للطفل ليكتب اسمه ويلصق صورته الشخصية." }
-],
-quiz: [
-{ q: "ما معنى كلمة 'Hallo' بالألمانية؟", o: ["شكراً", "مرحباً", "مع السلامة"], a: 1, e: "برافو! Hallo تعني مرحباً وهي الكلمة الأكثر استخداماً." }
-]
-}
-},
-italian: {
-title: "اللغة الإيطالية للأبطال 🇮🇹",
-A1: {
-lessons: [
-{ id: 1, title: "الدرس 1: الكلمات الترحيبية (Ciao!)", content: "الإيطالية لغة موسيقية ممتعة! الكلمة الأشهر هي Ciao وتعني (مرحباً) وأيضاً (مع السلامة). للترحيب الرسمي نقول Buongiorno (صباح الخير). وعندما نطلب شيئاً بأدب نقول Per favore (من فضلك).", prompt: "A cute little cartoon puppy eating a small piece of Italian pizza, looking super happy, colorful text 'Ciao' floating in the air, playful design.", script: "بونجورنو يا أبطال! اليوم سنطير إلى إيطاليا بلد البيتزا والمعكرونة الجميلة. لتقول مرحباً قل: Ciao! كلمة سهلة وممتعة، أليس كذلك؟ كررها دائماً!", pdf_idea: "رسمة لبرج بيزا المائل مع كلمة Ciao منقطة ليقوم الطفل بالسير فوقها بالقلم لتعلّم الكتابة." }
-],
-quiz: [
-{ q: "ما معنى كلمة 'Ciao'؟", o: ["مرحباً", "شكراً", "أنا جائع"], a: 0, e: "برافو! Ciao هي الكلمة السحرية في إيطاليا للترحيب بالأصدقاء." }
-]
-}
-},
-arabic: {
-title: "اللغة العربية للأبطال 🇪🇬",
-A1: {
-lessons: [
-{ id: 1, title: "الدرس 1: الحروف والترحيب بالضاد", content: "اللغة العربية لغة جميلة جداً! نرحب بالآخرين بقولنا 'أهلاً وسهلاً' أو 'السلام عليكم'. وعند الصباح نقول 'صباح الخير'. الحرف الأول في لغتنا هو حرف الألف (أ) مثل أسد شجاع، وأرنب سريع.", prompt: "An adorable cartoon baby falcon holding a wooden sign with Arabic letter 'Alef' written beautifully, soft desert oasis background, friendly cartoon style.", script: "أهلاً بكم يا أصدقائي الصغار في درس اللغة العربية الممتع! لغتنا هي لغة الضاد الجميلة. لنرحب بالجميع نقول: أهلاً وسهلاً! هيا رددوا معي واكسبوا النجوم!", pdf_idea: "ورقة تلوين لحرف الألف (أ) ورسمة أسد وأرنب مع مسارات لتتبع الحرف." }
-],
-quiz: [
-{ q: "ما هو الحرف الأول في اللغة العربية؟", o: ["ب", "أ", "ت"], a: 1, e: "ممتاز! حرف الألف هو بداية الحروف والكلمات الجميلة مثل أسد." }
-]
-}
-}
-};
+        // قاعدة بيانات الدروس والبرومبتات والكويزات التعليمية لكل اللغات الـ 4
+        const coursesData = {
+            english: {
+                title: "اللغة الإنجليزية للأبطال 🇬🇧",
+                A1: {
+                    lessons: [
+                        { id: 1, title: "الدرس 1: التحيات والترحيب (Greetings)", content: "للبدء في التحدث، نقولHello وتعني (مرحباً)، وعند الصباح نقول Good morning وتعني (صباح الخير). عندما نلتقي بصديق نقول: Hello, how are you? فيجيب: I am fine, thank you! (أنا بخير، شكراً لك).", prompt: "A super cute cartoon lion wearing a school backpack, waving its hand smiling happily, bright sunny school yard background, colorful vector illustration, 3D Pixar style.", script: "أهلاً بكم يا أبطال في درس الإنجليزية الأول! اليوم سنتعلم كيف نحيي أصدقائنا الجدد. عندما تقابل شخصاً جديداً، ابتسم وقل له بكل ثقة: Hello! هيا كرروا معي.. ممتازين!", pdf_idea: "ورقة تلوين الحروف والكلمات Hello و Good morning وتوصيل النقاط لتشكيل وجه مبتسم." },
+                        { id: 2, title: "الدرس 2: الألوان الزاهية (Colors)", content: "الألوان تجعل عالمنا جميلاً! الأحمر هو Red مثل التفاحة الجميلة، الأزرق هو Blue مثل السماء الصافية، والأصفر هو Yellow مثل الشمس المشرقة. الأخضر هو Green مثل أوراق الشجر.", prompt: "A whimsical cute cartoon chameleon changing its colors into blocks of shiny red, blue, yellow, and green, clean white background, kid-friendly design, 8k Resolution.", script: "مرحباً بكم يا أصدقائي! هل تحبون الرسم؟ اليوم سنتعلم أسماء الألوان بالإنجليزية لتلوين لوحاتكم. الأحمر هو Red والأزرق هو Blue.. ما هو لونكم المفضل؟", pdf_idea: "رسمة قوس قزح غير ملون، ومكتوب على كل شريط اسم اللون بالإنجليزية، يقوم الطفل بتلوينه." }
+                    ],
+                    quiz: [
+                        { q: "ما معنى كلمة 'Red'؟", o: ["أزرق", "أحمر", "أخضر"], a: 1, e: "برافو! Red يعني اللون الأحمر مثل الفراولة اللذيذة." },
+                        { q: "عندما نلتقي بشخص في الصباح نقول:", o: ["Good night", "Good morning", "Goodbye"], a: 1, e: "ممتاز! Good morning هي تحية الصباح الجميلة." }
+                    ]
+                }
+            },
+            german: {
+                title: "اللغة الألمانية للأبطال 🇩🇪",
+                A1: {
+                    lessons: [
+                        { id: 1, title: "الدرس 1: التحيات والتعارف (Begrüßung)", content: "في ألمانيا، عندما نحيي شخصاً نقولHallo وتعني (مرحباً). وفي الصباح نقول Guten Morgen وتعني (صباح الخير). وعندما نسأل صديقاً عن اسمه نقول: Wie heißt du? (ما اسمك؟) فيجيب: Ich heiße Ahmed (اسمي أحمد).", prompt: "A cheerful cute cartoon bear wearing traditional German lederhosen, holding a small welcome banner, friendly village background, colorful animation style.", script: "مرحباً بكم في رحلتنا إلى ألمانيا! لغتنا اليوم رائعة جداً وسهلة. لتقول مرحباً لصديقك الجديد قل له: Hallo! هيا جربوها.. برافو! أنتم مذهلون حقاً.", pdf_idea: "كتابة جملة Ich heiße وترك فراغ للطفل ليكتب اسمه ويلصق صورته الشخصية." }
+                    ],
+                    quiz: [
+                        { q: "ما معنى كلمة 'Hallo' بالألمانية؟", o: ["شكراً", "مرحباً", "مع السلامة"], a: 1, e: "برافو! Hallo تعني مرحباً وهي الكلمة الأكثر استخداماً." }
+                    ]
+                }
+            },
+            italian: {
+                title: "اللغة الإيطالية للأبطال 🇮🇹",
+                A1: {
+                    lessons: [
+                        { id: 1, title: "الدرس 1: الكلمات الترحيبية (Ciao!)", content: "الإيطالية لغة موسيقية ممتعة! الكلمة الأشهر هي Ciao وتعني (مرحباً) وأيضاً (مع السلامة). للترحيب الرسمي نقول Buongiorno (صباح الخير). وعندما نطلب شيئاً بأدب نقول Per favore (من فضلك).", prompt: "A cute little cartoon puppy eating a small piece of Italian pizza, looking super happy, colorful text 'Ciao' floating in the air, playful design.", script: "بونجورنو يا أبطال! اليوم سنطير إلى إيطاليا بلد البيتزا والمعكرونة الجميلة. لتقول مرحباً قل: Ciao! كلمة سهلة وممتعة، أليس كذلك؟ كررها دائماً!", pdf_idea: "رسمة لبرج بيزا المائل مع كلمة Ciao منقطة ليقوم الطفل بالسير فوقها بالقلم لتعلّم الكتابة." }
+                    ],
+                    quiz: [
+                        { q: "ما معنى كلمة 'Ciao'؟", o: ["مرحباً", "شكراً", "أنا جائع"], a: 0, e: "برافو! Ciao هي الكلمة السحرية في إيطاليا للترحيب بالأصدقاء." }
+                    ]
+                }
+            },
+            arabic: {
+                title: "اللغة العربية للأبطال 🇪🇬",
+                A1: {
+                    lessons: [
+                        { id: 1, title: "الدرس 1: الحروف والترحيب بالضاد", content: "اللغة العربية لغة جميلة جداً! نرحب بالآخرين بقولنا 'أهلاً وسهلاً' أو 'السلام عليكم'. وعند الصباح نقول 'صباح الخير'. الحرف الأول في لغتنا هو حرف الألف (أ) مثل أسد شجاع، وأرنب سريع.", prompt: "An adorable cartoon baby falcon holding a wooden sign with Arabic letter 'Alef' written beautifully, soft desert oasis background, friendly cartoon style.", script: "أهلاً بكم يا أصدقائي الصغار في درس اللغة العربية الممتع! لغتنا هي لغة الضاد الجميلة. لنرحب بالجميع نقول: أهلاً وسهلاً! هيا رددوا معي واكسبوا النجوم!", pdf_idea: "ورقة تلوين لحرف الألف (أ) ورسمة أسد وأرنب مع مسارات لتتبع الحرف." }
+                    ],
+                    quiz: [
+                        { q: "ما هو الحرف الأول في اللغة العربية؟", o: ["ب", "أ", "ت"], a: 1, e: "ممتاز! حرف الألف هو بداية الحروف والكلمات الجميلة مثل أسد." }
+                    ]
+                }
+            }
+        };
 
-function showPage(pageId) {
-document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-document.getElementById(`page-${pageId}`).classList.add('active');
-window.scrollTo(0,0);
-}
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(`page-${pageId}`).classList.add('active');
+            window.scrollTo(0,0);
+        }
 
-function startLanguage(langKey) {
-currentLang = langKey;
-currentLevel = 'A1';
-document.getElementById('current-lang-title').innerText = coursesData[langKey].title;
-showPage('language');
-loadLevelContent('A1');
-}
+        function startLanguage(langKey) {
+            currentLang = langKey;
+            currentLevel = 'A1';
+            document.getElementById('current-lang-title').innerText = coursesData[langKey].title;
+            showPage('language');
+            loadLevelContent('A1');
+        }
 
-function loadLevelContent(levelKey) {
-currentLevel = levelKey;
-document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+        function loadLevelContent(levelKey) {
+            currentLevel = levelKey;
+            document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // تفعيل الزر النشط في القائمة الجانبية
+            const workspace = document.getElementById('level-workspace');
+            const data = coursesData[currentLang]?.[levelKey];
 
-// تفعيل الزر النشط في القائمة الجانبية
-const workspace = document.getElementById('level-workspace');
-const data = coursesData[currentLang]?.[levelKey];
+            if (!data) {
+                workspace.innerHTML = `
+                    <div style="text-align:center; padding:30px;">
+                        <h2>المستوى ${levelKey} قادم قريباً جداً! 🎈</h2>
+                        <p>يتم الآن إعداد الألعاب والصور الكرتونية المخصصة لهذا المستوى بواسطة الذكاء الاصطناعي السحري. عد قريباً يا بطل!</p>
+                    </div>`;
+                return;
+            }
 
-if (!data) {
-workspace.innerHTML = `
-<div style="text-align:center; padding:30px;">
-<h2>المستوى ${levelKey} قادم قريباً جداً! 🎈</h2>
-<p>يتم الآن إعداد الألعاب والصور الكرتونية المخصصة لهذا المستوى بواسطة الذكاء الاصطناعي السحري. عد قريباً يا بطل!</p>
-</div>`;
-return;
-}
+            let html = `<h2 style="margin-bottom:20px; color:var(--candy-pink);">مغامرة المستوى ${levelKey} 🎉</h2>`;
 
-let html = `<h2 style="margin-bottom:20px; color:var(--candy-pink);">مغامرة المستوى ${levelKey} 🎉</h2>`;
+            // توليد الدروس
+            data.lessons.forEach(lesson => {
+                html += `
+                    <div class="lesson-card">
+                        <h4>⭐ ${lesson.title}</h4>
+                        <p style="font-size:19px; line-height:1.8;">${lesson.content}</p>
+                        
+                        <div class="image-prompt-box">
+                            <strong>🎨 برومبت الصورة الكرتونية للدرس (Copy to Canva/Midjourney):</strong><br>
+                            <code>${lesson.prompt}</code>
+                        </div>
 
-// توليد الدروس
-data.lessons.forEach(lesson => {
-html += `
-<div class="lesson-card">
-<h4>⭐ ${lesson.title}</h4>
-<p style="font-size:19px; line-height:1.8;">${lesson.content}</p>
+                        <div class="script-box">
+                            <strong>🎬 سكريبت فيديو المعلم (2 دقيقة):</strong><br>
+                            🗣️ ${lesson.script}
+                        </div>
 
-<div class="image-prompt-box">
-<strong>🎨 برومبت الصورة الكرتونية للدرس (Copy to Canva/Midjourney):</strong><br>
-<code>${lesson.prompt}</code>
-</div>
+                        <div style="background:#F1F5F9; padding:10px; border-radius:10px; font-size:16px;">
+                            <strong>📝 فكرة ورقة العمل القابلة للطباعة PDF:</strong> ${lesson.pdf_idea}
+                        </div>
+                    </div>
+                `;
+            });
 
-<div class="script-box">
-<strong>🎬 سكريبت فيديو المعلم (2 دقيقة):</strong><br>
-🗣️ ${lesson.script}
-</div>
+            // توليد الكويز التفاعلي لهذا المستوى
+            html += `
+                <div class="quiz-box" id="level-quiz-area">
+                    <h3>🎮 كويز الذكاء السريع للمستوى (اكسب النجوم!)</h3>
+                    <p style="margin-bottom:15px;">أجب عن الأسئلة التالية لتثبت قوتك وسرعتك:</p>
+            `;
 
-<div style="background:#F1F5F9; padding:10px; border-radius:10px; font-size:16px;">
-<strong>📝 فكرة ورقة العمل القابلة للطباعة PDF:</strong> ${lesson.pdf_idea}
-</div>
-</div>
-`;
-});
+            data.quiz.forEach((q, qIdx) => {
+                html += `
+                    <div style="margin-bottom:20px; background:white; padding:15px; border-radius:12px;">
+                        <p style="font-weight:bold; font-size:19px;">${qIdx + 1}. ${q.q}</p>
+                `;
+                q.o.forEach((opt, oIdx) => {
+                    html += `<button class="option-btn" onclick="checkAnswer(${qIdx}, ${oIdx}, ${q.a}, '${q.e.replace(/'/g, "\\'")}')">${opt}</button>`;
+                });
+                html += `<div id="feedback-${qIdx}" class="feedback-msg"></div></div>`;
+            });
 
-// توليد الكويز التفاعلي لهذا المستوى
-html += `
-<div class="quiz-box" id="level-quiz-area">
-<h3>🎮 كويز الذكاء السريع للمستوى (اكسب النجوم!)</h3>
-<p style="margin-bottom:15px;">أجب عن الأسئلة التالية لتثبت قوتك وسرعتك:</p>
-`;
+            html += `</div>`;
+            workspace.innerHTML = html;
+        }
 
-data.quiz.forEach((q, qIdx) => {
-html += `
-<div style="margin-bottom:20px; background:white; padding:15px; border-radius:12px;">
-<p style="font-weight:bold; font-size:19px;">${qIdx + 1}. ${q.q}</p>
-`;
-q.o.forEach((opt, oIdx) => {
-html += `<button class="option-btn" onclick="checkAnswer(${qIdx}, ${oIdx}, ${q.a}, '${q.e.replace(/'/g, "\\'")}')">${opt}</button>`;
-});
-html += `<div id="feedback-${qIdx}" class="feedback-msg"></div></div>`;
-});
+        function checkAnswer(qIdx, selectedIdx, correctIdx, explanation) {
+            const feedbackDiv = document.getElementById(`feedback-${qIdx}`);
+            if (selectedIdx === correctIdx) {
+                feedbackDiv.innerHTML = `<span style="color:var(--bright-green);">برافو! 🎉 ممتاز جداً. ${explanation}</span>`;
+                totalStars += 10;
+                document.getElementById('star-count').innerText = totalStars;
+            } else {
+                feedbackDiv.innerHTML = `<span style="color:var(--candy-pink);">حاول تاني! 🤔 الإجابة غير صحيحة، ركز جيداً في الشرح بالأعلى وجرب مرة أخرى!</span>`;
+            }
+        }
 
-html += `</div>`;
-workspace.innerHTML = html;
-}
+        // محاكي الامتحانات الشاملة بالمؤقت الزمني
+        function startExamSimulator() {
+            let duration = 900; // 15 دقيقة بالثواني
+            const timerBanner = document.getElementById('exam-timer');
+            
+            if (examTimerInterval) clearInterval(examTimerInterval);
+            
+            examTimerInterval = setInterval(() => {
+                let minutes = Math.floor(duration / 60);
+                let seconds = duration % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                timerBanner.textContent = `⏱️ الوقت المتبقي للامتحان: ${minutes}:${seconds} دقيقة`;
+                
+                if (--duration < 0) {
+                    clearInterval(examTimerInterval);
+                    timerBanner.textContent = "⌛ انتهى الوقت!";
+                    alert("انتهى وقت الامتحان يا بطل! تم إرسال إجاباتك بنجاح وحصلت على النجوم.");
+                }
+            }, 1000);
 
-function checkAnswer(qIdx, selectedIdx, correctIdx, explanation) {
-const feedbackDiv = document.getElementById(`feedback-${qIdx}`);
-if (selectedIdx === correctIdx) {
-feedbackDiv.innerHTML = `<span style="color:var(--bright-green);">برافو! 🎉 ممتاز جداً. ${explanation}</span>`;
-totalStars += 10;
-document.getElementById('star-count').innerText = totalStars;
-} else {
-feedbackDiv.innerHTML = `<span style="color:var(--candy-pink);">حاول تاني! 🤔 الإجابة غير صحيحة، ركز جيداً في الشرح بالأعلى وجرب مرة أخرى!</span>`;
-}
-}
+            // عرض عينة من أسئلة الاستماع الشاملة داخل الامتحان
+            document.getElementById('exam-quiz-container').innerHTML = `
+                <div class="quiz-box">
+                    <h3>السؤال الأول: استمع جيداً لملف الصوت التخيلي واجب</h3>
+                    <div class="script-box" style="background:#E0F2FE; border-color:var(--sky-blue);">
+                        📢 <strong>سكريبت الصوت للمعلم (Listening Script):</strong> "Hello students, look at the sky, it is completely Blue today!"
+                    </div>
+                    <p style="font-weight:bold; font-size:20px;">ما هو لون السماء الذي ذكره المعلم في المقطع الصوتي؟</p>
+                    <button class="option-btn" onclick="submitExamAnswer(true)">🔵 Blue (أزرق)</button>
+                    <button class="option-btn" onclick="submitExamAnswer(false)">🔴 Red (أحمر)</button>
+                    <div id="exam-feedback" class="feedback-msg"></div>
+                </div>
+            `;
+        }
 
-// محاكي الامتحانات الشاملة بالمؤقت الزمني
-function startExamSimulator() {
-let duration = 900; // 15 دقيقة بالثواني
-const timerBanner = document.getElementById('exam-timer');
+        function submitExamAnswer(isCorrect) {
+            const fb = document.getElementById('exam-feedback');
+            if(isCorrect) {
+                fb.innerHTML = "🏆 برافو يا بطل إجابة صحيحة! حصلت على 50 نجمة إضافية لإنهاء الامتحان بنجاح!";
+                totalStars += 50;
+                document.getElementById('star-count').innerText = totalStars;
+                clearInterval(examTimerInterval);
+            } else {
+                fb.innerHTML = "❌ حاول تاني! الإجابة غير صحيحة، استمع للمقطع الصوتي مرة أخرى بدقة.";
+            }
+        }
 
-if (examTimerInterval) clearInterval(examTimerInterval);
-
-examTimerInterval = setInterval(() => {
-let minutes = Math.floor(duration / 60);
-let seconds = duration % 60;
-seconds = seconds < 10 ? '0' + seconds : seconds;
-timerBanner.textContent = `⏱️ الوقت المتبقي للامتحان: ${minutes}:${seconds} دقيقة`;
-
-if (--duration < 0) {
-clearInterval(examTimerInterval);
-timerBanner.textContent = "⌛ انتهى الوقت!";
-alert("انتهى وقت الامتحان يا بطل! تم إرسال إجاباتك بنجاح وحصلت على النجوم.");
-}
-}, 1000);
-
-// عرض عينة من أسئلة الاستماع الشاملة داخل الامتحان
-document.getElementById('exam-quiz-container').innerHTML = `
-<div class="quiz-box">
-<h3>السؤال الأول: استمع جيداً لملف الصوت التخيلي واجب</h3>
-<div class="script-box" style="background:#E0F2FE; border-color:var(--sky-blue);">
-📢 <strong>سكريبت الصوت للمعلم (Listening Script):</strong> "Hello students, look at the sky, it is completely Blue today!"
-</div>
-<p style="font-weight:bold; font-size:20px;">ما هو لون السماء الذي ذكره المعلم في المقطع الصوتي؟</p>
-<button class="option-btn" onclick="submitExamAnswer(true)">🔵 Blue (أزرق)</button>
-<button class="option-btn" onclick="submitExamAnswer(false)">🔴 Red (أحمر)</button>
-<div id="exam-feedback" class="feedback-msg"></div>
-</div>
-`;
-}
-
-function submitExamAnswer(isCorrect) {
-const fb = document.getElementById('exam-feedback');
-if(isCorrect) {
-fb.innerHTML = "🏆 برافو يا بطل إجابة صحيحة! حصلت على 50 نجمة إضافية لإنهاء الامتحان بنجاح!";
-totalStars += 50;
-document.getElementById('star-count').innerText = totalStars;
-clearInterval(examTimerInterval);
-} else {
-fb.innerHTML = "❌ حاول تاني! الإجابة غير صحيحة، استمع للمقطع الصوتي مرة أخرى بدقة.";
-}
-}
-
-function triggerGameAnswer(isCorrect) {
-const fb = document.getElementById('game-feedback');
-if(isCorrect) {
-fb.innerHTML = "🍏 برافو! إجابة صحيحة، Apple تعني تفاحة! كسبت 5 نجوم!";
-totalStars += 5;
-document.getElementById('star-count').innerText = totalStars;
-} else {
-fb.innerHTML = "❌ حاول تاني يا بطل! الموزة تعني Banana.";
-}
-}
-</script>
+        function triggerGameAnswer(isCorrect) {
+            const fb = document.getElementById('game-feedback');
+            if(isCorrect) {
+                fb.innerHTML = "🍏 برافو! إجابة صحيحة، Apple تعني تفاحة! كسبت 5 نجوم!";
+                totalStars += 5;
+                document.getElementById('star-count').innerText = totalStars;
+            } else {
+                fb.innerHTML = "❌ حاول تاني يا بطل! الموزة تعني Banana.";
+            }
+        }
+    </script>
 </body>
 </html>
